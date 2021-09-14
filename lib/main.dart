@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_router_flutter/src/home.dart';
-import 'package:sample_router_flutter/src/named/first_named.dart';
-import 'package:sample_router_flutter/src/named/second_named.dart';
+import 'package:sample_router_flutter/src/pages/named/first_named.dart';
+import 'package:sample_router_flutter/src/pages/named/second_named.dart';
+import 'package:sample_router_flutter/src/pages/next.dart';
+import 'package:sample_router_flutter/src/pages/user_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: Home(),
+      // home: Home(),  // Named route 사용시 주석처리
       initialRoute: "/",
 
       /// NOTE Original Flutter
@@ -44,6 +46,16 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: "/second",
           page: () => SecondNamedPage(),
+          transition: Transition.zoom,
+        ),
+        GetPage(
+          name: "/next",
+          page: () => NextPage(),
+          transition: Transition.zoom,
+        ),
+        GetPage(
+          name: "/user/:uid",
+          page: () => UserPage(),
           transition: Transition.zoom,
         ),
       ],

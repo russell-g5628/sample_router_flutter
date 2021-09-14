@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sample_router_flutter/src/normal/second.dart';
 
 class FirstNamedPage extends StatelessWidget {
   const FirstNamedPage({Key? key}) : super(key: key);
