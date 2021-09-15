@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_router_flutter/src/pages/dependencies/dependency_manage_page.dart';
 import 'package:sample_router_flutter/src/pages/normal/first.dart';
+import 'package:sample_router_flutter/src/pages/rendering_native_controls.dart';
 import 'package:sample_router_flutter/src/pages/rx_state_manage_page.dart';
 import 'package:sample_router_flutter/src/pages/simple_state_manage_page.dart';
 
@@ -102,6 +103,15 @@ class _HomeState extends State<Home> {
 
                 /// GETX
                 Get.toNamed('/binding');
+              },
+            ),
+            ElevatedButton(
+              child: Text('GooMap'),
+              onPressed: () {
+                /// NOTE Original Flutter
+
+                /// GETX
+                Get.to(RenderNativeControl());
               },
             ),
           ],
