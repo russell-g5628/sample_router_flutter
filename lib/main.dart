@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sample_router_flutter/src/binder/binding_with_route_binding.dart';
+import 'package:sample_router_flutter/src/binding_with_route.dart';
 import 'package:sample_router_flutter/src/home.dart';
 import 'package:sample_router_flutter/src/pages/named/first_named.dart';
 import 'package:sample_router_flutter/src/pages/named/second_named.dart';
@@ -58,6 +60,17 @@ class MyApp extends StatelessWidget {
           page: () => UserPage(),
           transition: Transition.zoom,
         ),
+        // GetPage(
+        //   name: '/binding',
+        //   page: () => BindingWithRoutePage(),
+        //   binding: BindingsBuilder(() {
+        //     Get.put(BindingController);
+        //   }),
+        GetPage(
+          name: '/binding',
+          page: () => BindingWithRoutePage(),
+          binding: BindingWithRouteBinding(),
+        )
       ],
     );
   }

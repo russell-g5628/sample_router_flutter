@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../home.dart';
-
 class UserPage extends StatelessWidget {
   const UserPage({Key? key}) : super(key: key);
 

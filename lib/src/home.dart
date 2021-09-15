@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sample_router_flutter/src/pages/dependencies/dependency_manage_page.dart';
 import 'package:sample_router_flutter/src/pages/normal/first.dart';
+import 'package:sample_router_flutter/src/pages/rx_state_manage_page.dart';
+import 'package:sample_router_flutter/src/pages/simple_state_manage_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -55,15 +58,52 @@ class _HomeState extends State<Home> {
                 },
                 child: Text('Argument 전달 Route')),
             ElevatedButton(
-                onPressed: () {
-                  /// NOTE Original Flutter
+              onPressed: () {
+                /// NOTE Original Flutter
 
-                  /// GETX
-                  Get.toNamed(
-                    "/user/test123?name=개남&age=32",
-                  );
-                },
-                child: Text('동적 라우팅')),
+                /// GETX
+                Get.toNamed(
+                  "/user/test123?name=개남&age=32",
+                );
+              },
+              child: Text('동적 라우팅'),
+            ),
+            ElevatedButton(
+              child: Text('단순 상태 관리'),
+              onPressed: () {
+                /// NOTE Original Flutter
+
+                /// GETX
+                Get.to(SimpleStateManagePage());
+              },
+            ),
+            ElevatedButton(
+              child: Text('RX 상태 관리'),
+              onPressed: () {
+                /// NOTE Original Flutter
+
+                /// GETX
+                Get.to(RxStateManagePage());
+              },
+            ),
+            ElevatedButton(
+              child: Text('Dependency'),
+              onPressed: () {
+                /// NOTE Original Flutter
+
+                /// GETX
+                Get.to(DependencyManagePage());
+              },
+            ),
+            ElevatedButton(
+              child: Text('Dependency with route'),
+              onPressed: () {
+                /// NOTE Original Flutter
+
+                /// GETX
+                Get.toNamed('/binding');
+              },
+            ),
           ],
         ),
       ),
